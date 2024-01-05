@@ -1,6 +1,147 @@
-.container {
+/* CONSTANTS */
+:root {
+  --primary-light: #ededed;
+  --secondary-light: #fefefe;
+  --primary-dark: #222831;
+  --secondary-dark: #060f2e;
+  --header: #111720;
+}
+
+html {
+  /* footer support */
+  position: relative;
+  min-height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  /* footer support */
+  margin-bottom: 100px;
+}
+
+button {
+  width: 100%;
+  border: none;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  outline: none;
+}
+
+/* HEADER */
+.header {
+  text-align: center;
+}
+
+h1 {
+  color: var(--primary-dark);
+  line-height: 1.2;
+  text-align: center;
+  font-size: 80px;
+}
+
+/* MAIN */
+#container {
   display: grid;
-  width: 500px;
-  height: 500px;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  height: 480px;
+  background-color: var(--secondary-light);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border: 1px solid;
+}
+
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.settings {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  max-width: 200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+button {
+  padding: 10px 20px;
+  border: 1px solid var(--primary-dark);
+  border-radius: 5px;
+}
+
+button.active {
+  background-color: var(--primary-dark);
+  color: var(--primary-light);
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+button {
+  transition: transform 0.1s ease-in-out;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 1200px) {
+  .main {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 850px) {
+  .main {
+    gap: 50px;
+  }
+
+  .settings {
+    width: 150px;
+    gap: 16px;
+  }
+
+  .size-value {
+    margin-bottom: -4px;
+  }
+
+  .grid {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+@media (max-width: 650px) {
+  .title {
+    font-size: 50px;
+  }
+
+  .main {
+    flex-direction: column-reverse;
+  }
+
+  .grid {
+    width: 300px;
+    height: 300px;
+  }
 }
