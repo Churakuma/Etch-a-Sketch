@@ -7,7 +7,6 @@ let current_color = DEFAULT_COLOR
 let current_mode = DEFAULT_MODE
 
 const colorPicker = document.getElementById('colorPicker')
-const createGridBtn = document.getElementById('createGridBtn')
 const clearGridBtn = document.getElementById('clearGridBtn')
 const colorBtn = document.getElementById('colorBtn')
 const rainbowBtn = document.getElementById('rainbowBtn')
@@ -20,8 +19,7 @@ colorPicker.oninput = (e) => setCurrentColor(e.target.value)
 colorBtn.addEventListener('click', () => setCurrentMode('color'))
 rainbowBtn.addEventListener('click', () => setCurrentMode('rainbow'))
 eraserBtn.addEventListener('click', () => setCurrentMode('eraser'))
-createGridBtn.addEventListener('click', () => refreshGrid());
-clearGridBtn.addEventListener('click', () => clearGrid());
+clearGridBtn.addEventListener('click', () => clearGrid())
 sizeSlider.onmousemove = (e) => updateSizeValue(e.target.value)
 sizeSlider.onchange = (e) => changeSize(e.target.value)
 
