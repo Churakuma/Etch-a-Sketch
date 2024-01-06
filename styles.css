@@ -64,13 +64,13 @@ h1 {
   border: 1px solid;
 }
 
-.main-content {
+main {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   gap: 100px;
   max-width: 1100px;
-  margin: 0 auto;
+  margin: 50px auto;
 }
 
 .settings {
@@ -80,7 +80,7 @@ h1 {
   justify-content: center;
   gap: 30px;
   max-width: 200px;
-  margin: 0 auto;
+  margin: 50px auto;
   width: 100%;
 }
 
