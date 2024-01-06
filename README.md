@@ -2,8 +2,7 @@
 Etch-a-Sketch project as part of The Odin Project Foundations path.
 
 <p align="center">
-  ![image](https://github.com/Churakuma/Etch-a-Sketch/assets/115225363/1e2cbf03-3b56-456f-9291-60ed495b4796)
-
+  <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/115225363/294652537-1e2cbf03-3b56-456f-9291-60ed495b4796.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240106%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240106T053759Z&X-Amz-Expires=300&X-Amz-Signature=dc8e88ecaaac79ad2cfb7e8087c03dc0cb1583619756cc4bf1ec42be761fbfe8&X-Amz-SignedHeaders=host&actor_id=115225363&key_id=0&repo_id=738988555" width="684px" height="457px">
 </p>
 
 [Live Preview](https://churakuma.github.io/Etch-a-Sketch/)
