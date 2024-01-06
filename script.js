@@ -9,10 +9,12 @@ let current_mode = DEFAULT_MODE
 const createGridBtn = document.getElementById('createGridBtn');
 const clearGridBtn = document.getElementById('clearGridBtn');
 const colorBtn = document.getElementById('colorBtn')
+const rainbowBtn = document.getElementById('rainbowBtn')
 const eraserBtn = document.getElementById('eraserBtn')
 const container = document.getElementById('container');
 
 colorBtn.addEventListener('click', () => setCurrentMode('color'))
+rainbowBtn.addEventListener('click', () => setCurrentMode('rainbow'))
 eraserBtn.addEventListener('click', () => setCurrentMode('eraser'))
 createGridBtn.addEventListener('click', () => refreshGrid());
 clearGridBtn.addEventListener('click', () => clearGrid());
@@ -50,6 +52,11 @@ function changeColor(e) {
         e.target.style.backgroundColor = current_color
     } else if (current_mode === 'eraser') {
         e.target.style.backgroundColor = '#fefefe'
+    } else if (current_mode === 'rainbow') {
+        const randomR = Math.floor(Math.random() * 256)
+        const randomG = Math.floor(Math.random() * 256)
+        const randomB = Math.floor(Math.random() * 256)
+        e.target.style.backgroundColor = `rgb(${randomR}, ${randomG}, ${randomB})`
     }
 }
 
@@ -66,14 +73,19 @@ function activateButton(newMode) {
         colorBtn.classList.remove('active')
     } else if (current_mode === 'eraser') {
         eraserBtn.classList.remove('active')
+    } else if (current_mode === 'rainbow') {
+        rainbowBtn.classList.remove('active')
     }
 
     if (newMode === 'color') {
         colorBtn.classList.add('active')
-        console.log("Switching to color mode")
+        console.log("Switching to pen mode")
     } else if (newMode === 'eraser') {
         eraserBtn.classList.add('active')
         console.log("Switching to eraser mode")
+    } else if (newMode === 'rainbow') {
+        rainbowBtn.classList.add('active')
+        console.log("Switching to rainbow mode")
     }
 }
 
@@ -85,4 +97,5 @@ function setCurrentMode(newMode) {
 
 window.onload = () => {
     createGrid(DEFAULT_SIZE)
+    activateButton(DEFAULT_MODE)
 }
