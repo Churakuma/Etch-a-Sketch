@@ -136,6 +136,31 @@ input[type='color'] {
   font-size: 20px;
 }
 
+/* FOOTER */
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 10px;
+  padding: 10px;
+  font-size: 20px;
+}
+
+#fa-github {
+  color: var(--primary-dark);
+  font-size: 32px;
+  transition: transform 0.3s ease-in-out;
+  vertical-align: middle;
+}
+
+#fa-github:hover {
+  transform: rotate(360deg) scale(1.2);
+}
+
 /* MEDIA QUERIES */
 
 @media (max-width: 1200px) {

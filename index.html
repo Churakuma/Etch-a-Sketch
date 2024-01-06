@@ -14,9 +14,9 @@
     <main id="main-content">
         <div class="settings">
             <input id='colorPicker' type="color">
-            <button class="btn" id="createGridBtn">Create Grid</button>
-            <button class="btn" id="clearGridBtn">Clear Grid</button>
-            <button class="btn" id="colorBtn">Pen</button>
+            <button id="createGridBtn">Create Grid</button>
+            <button id="clearGridBtn">Clear Grid</button>
+            <button id="colorBtn">Pen</button>
             <button id="rainbowBtn">Rainbow Pen</button>
             <button class="btn" id="eraserBtn">Eraser</button>
         </div>
@@ -24,8 +24,21 @@
         <div id="container"></div>
     </main>
 
-    <footer></footer>
+    <footer class="footer">
+        <p>
+            Copyright ©
+            <script>
+              document.write(new Date().getFullYear())
+            </script>
+            Churakuma
+        </p>
+        <a href="https://github.com/Churakuma" target="_blank">
+            <ion-icon id="fa-github" name="logo-github"></ion-icon>
+        </a>
+    </footer>
     
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
