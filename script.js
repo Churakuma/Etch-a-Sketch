@@ -7,12 +7,14 @@ let current_color = DEFAULT_COLOR
 let current_mode = DEFAULT_MODE
 
 const colorPicker = document.getElementById('colorPicker')
-const createGridBtn = document.getElementById('createGridBtn');
-const clearGridBtn = document.getElementById('clearGridBtn');
+const createGridBtn = document.getElementById('createGridBtn')
+const clearGridBtn = document.getElementById('clearGridBtn')
 const colorBtn = document.getElementById('colorBtn')
 const rainbowBtn = document.getElementById('rainbowBtn')
 const eraserBtn = document.getElementById('eraserBtn')
-const container = document.getElementById('container');
+const container = document.getElementById('container')
+const sizeValue = document.getElementById('sizeValue')
+const sizeSlider = document.getElementById('sizeSlider')
 
 colorPicker.oninput = (e) => setCurrentColor(e.target.value)
 colorBtn.addEventListener('click', () => setCurrentMode('color'))
@@ -20,6 +22,8 @@ rainbowBtn.addEventListener('click', () => setCurrentMode('rainbow'))
 eraserBtn.addEventListener('click', () => setCurrentMode('eraser'))
 createGridBtn.addEventListener('click', () => refreshGrid());
 clearGridBtn.addEventListener('click', () => clearGrid());
+sizeSlider.onmousemove = (e) => updateSizeValue(e.target.value)
+sizeSlider.onchange = (e) => changeSize(e.target.value)
 
 let mouseDown = false
 document.body.onmousedown = () => (mouseDown = true)
@@ -38,6 +42,24 @@ function createGrid(size) {
         gridSquare.addEventListener('mousedown', changeColor)
         container.appendChild(gridSquare);
     }
+}
+
+// Function to update text div showing current grid size
+function updateSizeValue(value) {
+    sizeValue.innerHTML = `${value} x ${value}`
+}
+
+//Function to change the size of the grid using the slider
+function changeSize(value) {
+    setCurrentSize(value)
+    updateSizeValue(value)
+    reloadGrid()
+}
+
+// Function to reload grid given current size
+function reloadGrid() {
+    clearGrid()
+    createGrid(current_size)
 }
 
 // Function to clear grid of content
@@ -100,6 +122,11 @@ function setCurrentMode(newMode) {
 // Function to use the color picker and select color
 function setCurrentColor(newColor) {
     current_color = newColor
+}
+
+// Function to set the current size of the grid
+function setCurrentSize(newSize) {
+    current_size = newSize
 }
 
 window.onload = () => {
