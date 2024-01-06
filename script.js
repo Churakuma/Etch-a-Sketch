@@ -6,6 +6,7 @@ let current_size = DEFAULT_SIZE
 let current_color = DEFAULT_COLOR
 let current_mode = DEFAULT_MODE
 
+const colorPicker = document.getElementById('colorPicker')
 const createGridBtn = document.getElementById('createGridBtn');
 const clearGridBtn = document.getElementById('clearGridBtn');
 const colorBtn = document.getElementById('colorBtn')
@@ -13,6 +14,7 @@ const rainbowBtn = document.getElementById('rainbowBtn')
 const eraserBtn = document.getElementById('eraserBtn')
 const container = document.getElementById('container');
 
+colorPicker.oninput = (e) => setCurrentColor(e.target.value)
 colorBtn.addEventListener('click', () => setCurrentMode('color'))
 rainbowBtn.addEventListener('click', () => setCurrentMode('rainbow'))
 eraserBtn.addEventListener('click', () => setCurrentMode('eraser'))
@@ -93,6 +95,11 @@ function activateButton(newMode) {
 function setCurrentMode(newMode) {
     activateButton(newMode)
     current_mode = newMode
+}
+
+// Function to use the color picker and select color
+function setCurrentColor(newColor) {
+    current_color = newColor
 }
 
 window.onload = () => {

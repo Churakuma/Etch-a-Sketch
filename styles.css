@@ -30,7 +30,8 @@ body {
   margin-bottom: 100px;
 }
 
-button {
+button, 
+input {
   width: 100%;
   border: none;
   color: inherit;
@@ -95,12 +96,44 @@ button.active {
   color: var(--primary-light);
 }
 
-button:hover {
+button:hover,
+input[type='color']:hover {
   transform: scale(1.05);
 }
 
-button {
+button,
+input[type='color'] {
   transition: transform 0.1s ease-in-out;
+}
+
+input[type='color']:active {
+  transition: transform 0.05s ease-in-out;
+  transform: scale(1);
+}
+
+input[type='color'] {
+  width: 80px;
+  height: 80px;
+  border: none;
+  appearance: none;
+  -moz-appearance: none;
+}
+
+input[type='color']::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+input[type='color']::-webkit-color-swatch,
+input[type='color'] {
+  border: none;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+
+.size-value {
+  margin-bottom: -20px;
+  font-size: 20px;
 }
 
 /* MEDIA QUERIES */
